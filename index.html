@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vazamentos NU 2025</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-size: 3rem;
-            font-weight: bold;
-            color: white;
-            animation: fundoPiscante 0.5s infinite alternate;
-        }
-
-        @keyframes fundoPiscante {
-            0% { background-color: red; }
-            25% { background-color: yellow; }
-            50% { background-color: blue; }
-            75% { background-color: green; }
-            100% { background-color: purple; }
-        }
-
-        img {
-            max-width: 80%;
-            height: auto;
-            margin-top: 20px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missão Secreta</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #8B0000;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    img {
+      width: 100px;
+      margin-bottom: 20px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #333;
+    }
+  </style>
 </head>
 <body>
-    <div>1° de abril!</div>
-    <img src="https://assets.onecompiler.app/43dhszfxr/43dhsteyk/Cat-pointing-and-laughing-meme-8hdb48.jpg" alt="1abril" style="width:30%;height:50%;">
+  <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png" alt="Cadeado">
+  <h1>Arquivo Confidencial</h1>
+  <p>Digite o código de 9 dígitos para tentar descriptografar:</p>
+  <input type="text" id="codigo" maxlength="9">
+  <br>
+  <button onclick="descriptografar()">Descriptografar</button>
+
+  <script>
+    function descriptografar() {
+      const codigo = document.getElementById('codigo').value;
+      if (codigo.length === 9) {
+        window.location.href = 'sucesso.html';
+      } else {
+        alert('O código precisa ter exatamente 9 dígitos.');
+      }
+    }
+  </script>
 </body>
 </html>
